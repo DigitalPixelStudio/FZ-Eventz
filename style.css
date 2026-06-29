@@ -242,10 +242,10 @@ section{padding:var(--sp);position:relative;overflow:hidden}
 }
 @media(min-width:768px){.fis{height:80vh}}
 .fis img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center center}
-.fis .ov{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(3,3,3,0.75) 0%,rgba(3,3,3,0.15) 50%,rgba(3,3,3,0.75) 100%)}
-.fis .c{position:relative;z-index:1;text-align:center;max-width:700px;padding:0 20px}
-.fis .c h2{font-size:clamp(28px,5vw,52px);color:var(--w);margin-bottom:14px}
-.fis .c p{font-size:16px;color:var(--wd);line-height:1.7}
+.fis .ov2{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:1}
+.fis .c{position:relative;z-index:2;text-align:center;max-width:700px;padding:0 20px}
+.fis .c h2{font-size:clamp(28px,5vw,52px);color:var(--w);margin-bottom:14px;text-shadow:0 4px 30px rgba(0,0,0,0.6),0 2px 8px rgba(0,0,0,0.5)}
+.fis .c p{font-size:16px;color:var(--w);line-height:1.7;text-shadow:0 2px 16px rgba(0,0,0,0.5)}
 @media(min-width:768px){.fis .c p{font-size:18px}}
 
 /* === ABOUT === */

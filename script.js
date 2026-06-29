@@ -55,7 +55,8 @@
       const p=encodeURIComponent(this.querySelector('#leadPhone').value);
       const e2=encodeURIComponent(this.querySelector('#leadEmail').value);
       const msg=encodeURIComponent(this.querySelector('#leadMsg')?.value||'');
-      window.open(`https://wa.me/919731353830?text=Hello%20FZ%20Eventz!%0AName:%20${n}%0APhone:%20${p}%0AEmail:%20${e2}%0AMessage:%20${msg}`,'_blank');
+      const ev=encodeURIComponent(this.querySelector('#leadEvent')?.value||'');
+      window.open(`https://wa.me/918970118819?text=Hi%20FZ%20Eventz!%0AName:%20${n}%0APhone:%20${p}%0AEmail:%20${e2}%0AEvent%20Type:%20${ev}%0AMessage:%20${msg}`,'_blank');
       this.reset();
       if(ov) { ov.classList.remove('open'); document.body.style.overflow = ''; }
     });
@@ -71,7 +72,7 @@
       const e2=encodeURIComponent(this.querySelector('#cemail').value);
       const et=encodeURIComponent(this.querySelector('#cevent').value);
       const msg=encodeURIComponent(this.querySelector('#cmsg').value);
-      window.open(`https://wa.me/919731353830?text=Hello%20FZ%20Eventz!%0AName:%20${n}%0APhone:%20${p}%0AEmail:%20${e2}%0AEvent%20Type:%20${et}%0AMessage:%20${msg}`,'_blank');
+      window.open(`https://wa.me/918970118819?text=Hi%20FZ%20Eventz!%0AName:%20${n}%0APhone:%20${p}%0AEmail:%20${e2}%0AEvent%20Type:%20${et}%0AMessage:%20${msg}`,'_blank');
       this.reset();
     });
   }
