@@ -1,463 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FZ Eventz — Architectural Event Production | Bangalore</title>
-  <meta name="description" content="FZ Eventz crafts breathtaking luxury experiences across Bangalore. From private milestones to cinematic weddings — we engineer core memories.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23030303'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='20' font-weight='700' fill='%23D4AF37' text-anchor='middle'%3EFZ%3C/text%3E%3C/svg%3E">
-  <style>
-    .hero-badge.anim-in{animation:bdgS 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both}
-    .hero-title.anim-in{animation:titleR 1s cubic-bezier(0.16,1,0.3,1) 0.4s both}
-    .hero-subtitle.anim-in{animation:fadeU 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both}
-    .hero-actions.anim-in{animation:fadeU 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s both}
-    .btn-primary{animation:breathe 3s ease-in-out infinite}
-    @keyframes bdgS{0%{opacity:0;transform:translateY(20px) scale(0.95)}100%{opacity:1;transform:translateY(0) scale(1)}}
-    @keyframes titleR{0%{opacity:0;transform:translateY(60px);clip-path:inset(0 0 100% 0)}100%{opacity:1;transform:translateY(0);clip-path:inset(0 0 0 0)}}
-    @keyframes fadeU{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
-    @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,0.3)}50%{transform:scale(1.05);box-shadow:0 0 50px 15px rgba(212,175,55,0.2)}}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FZ Eventz — Architectural Event Production, Bengaluru</title>
+  <meta name="description" content="FZ Eventz curates extraordinary events across Bengaluru. From luxury weddings to corporate galas — architectural event production by Mohammed Faizan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <!-- ===== CURSOR GLOW ===== (injected by JS) -->
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation">
     <div class="container">
-      <a href="#hero" class="nav-logo" aria-label="FZ Eventz Home">
-        <img src="logo.svg" alt="FZ Eventz" width="220" height="60">
+      <a href="#" class="nav-logo" aria-label="FZ Eventz Home">
+        <img src="logo.svg" alt="FZ Eventz — Architectural Event Production" width="200" height="50" />
       </a>
       <div class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#events">Curated Events</a>
-        <a href="#wedding">Wedding Experience</a>
+        <a href="#about">About</a>
+        <a href="#events">Portfolio</a>
+        <a href="#wedding">Weddings</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
-        <button class="nav-cta" data-open-overlay>Enquire Now</button>
+        <button class="nav-cta lp">Book a Call</button>
       </div>
-      <div class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <div class="m-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
         <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
 
-  <!-- ===== MOBILE ===== -->
-  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <a href="#hero">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#events">Curated Events</a>
-    <a href="#wedding">Wedding Experience</a>
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="m-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#about">About</a>
+    <a href="#events">Portfolio</a>
+    <a href="#wedding">Weddings</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
-    <button class="nav-cta" data-open-overlay style="background:var(--gold-gradient);color:var(--black)!important;border:none;padding:14px 36px;font-size:15px;border-radius:12px">Enquire Now</button>
-  </div>
-
-  <!-- ===== FLOATING DOCK ===== -->
-  <div class="floating-dock" role="complementary" aria-label="Quick actions">
-    <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" class="dock-btn whatsapp" aria-label="Chat on WhatsApp">
-      <span class="tooltip">Chat on WhatsApp</span>
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-    </a>
-    <button class="dock-btn enquiry" data-open-overlay aria-label="Quick enquiry form">
-      <span class="tooltip">Quick Enquiry</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- ===== OVERLAY FORM ===== -->
-  <div class="overlay" id="leadOverlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
-    <div class="overlay-content">
-      <button class="overlay-close" aria-label="Close form">&times;</button>
-      <h2 id="overlay-title">Let's Create Together</h2>
-      <p>Tell us about your vision — we'll handle the rest.</p>
-      <form id="leadForm">
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label for="eventType">Event Type</label>
-          <select id="eventType" name="eventType">
-            <option value="">Select an event type</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Birthday">Birthday</option>
-            <option value="Anniversary">Anniversary</option>
-            <option value="Get Together">Get Together</option>
-            <option value="Catering">Catering</option>
-            <option value="Corporate">Corporate Event</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Your Vision</label>
-          <textarea id="message" name="message" placeholder="Tell us about your event..." rows="3"></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Enquiry</button>
-      </form>
-    </div>
+    <button class="nav-cta lp">Book a Call</button>
   </div>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2070&auto=format&fit=crop" alt="" class="hero-img" loading="eager">
-      <div class="overlay-grad"></div>
-      <div class="floating-orb o1"></div>
-      <div class="floating-orb o2"></div>
+      <img class="hi" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920&q=80" alt="Luxury event setup" loading="lazy" />
+      <div class="og"></div>
     </div>
-    <div class="hero-watermark">FZ</div>
-    <div class="hero-content">
-      <div class="hero-badge anim-in">Bangalore's Premier Event Studio</div>
-      <h1 class="hero-title anim-in">
-        We Don't Plan Events.
-        <span class="line-break gold-accent">We Engineer Core Memories.</span>
+    <div class="h-wm" aria-hidden="true">FZ</div>
+    <div class="h-c">
+      <span class="h-b">Bengaluru's Premier Event Architects</span>
+      <h1 class="h-t">
+        <span class="gold-a">Crafting Moments</span>
+        <span class="lb">That Last Forever</span>
       </h1>
-      <p class="hero-subtitle anim-in">
-        Crafting breathtaking luxury experiences across Bangalore. From private milestones
-        to cinematic weddings, your vision is our canvas.
-      </p>
-      <div class="hero-actions anim-in">
-        <button class="btn-primary" data-open-overlay>
-          Begin Your Journey
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </button>
-        <a href="#events" class="btn-secondary">Explore Our Work</a>
+      <p class="h-st">From intimate gatherings to grand celebrations — we design and produce architectural event experiences that captivate, inspire, and endure.</p>
+      <div class="h-a">
+        <button class="btn-p lp">Explore Our Work <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        <a href="#events" class="btn-s">View Portfolios</a>
       </div>
     </div>
-    <div class="hero-scroll-indicator">
+    <div class="h-si" aria-hidden="true">
       <span>Scroll</span>
-      <div class="scroll-line"></div>
+      <div class="sl-1"></div>
     </div>
   </section>
 
-  <!-- ===== FULL-VIEWPORT IMAGE DIVIDER 1 ===== -->
-  <div class="full-image-section">
-    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy">
-    <div class="overlay"></div>
-    <div class="content reveal-scale">
-      <h2>Every <span class="gold-accent">Detail</span> Matters</h2>
-      <p>From the first sketch to the final bow — we orchestrate every moment with precision.</p>
+  <!-- ===== FULL-IMAGE DIVIDER 1 ===== -->
+  <div class="fis">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1920&q=80" alt="Luxury wedding reception" loading="lazy" />
+    <div class="ov"></div>
+    <div class="c">
+      <h2>Every Detail,<br />Perfectly Curated</h2>
+      <p>We transform your vision into breathtaking reality with precision, passion, and an uncompromising eye for beauty.</p>
     </div>
   </div>
 
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image-wrapper reveal-left">
-          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop" alt="FZ Eventz" class="about-image" loading="lazy">
+      <div class="ab-g">
+        <div class="ai-w">
+          <img class="ai" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80" alt="Mohammed Faizan — Founder, FZ Eventz" loading="lazy" />
         </div>
-        <div class="about-content reveal-right">
-          <span class="section-label">About The Studio</span>
-          <h2 class="section-title">Personal. Original. <span class="gold-accent">Uncompromising.</span></h2>
-
-          <div class="founder-note">
-            <p>It began in the quiet lanes of <strong>Chellikere</strong>, a small village where <strong>Mohammed Faizan</strong> learned that the most memorable celebrations aren't born from big budgets — they're built from heart, hustle, and an obsessive eye for detail. What started as helping friends and family plan intimate gatherings soon became a calling.</p>
-            <p>Word spread. One event led to another. From village courtyards to city banquet halls, Faizan's reputation grew — not through marketing, but through the one thing that never lies: <strong>client satisfaction</strong>. Every smile, every tear of joy, every guest who said "this was the best event we've ever attended" became the foundation of FZ Eventz.</p>
-            <p>Today, the same village boy runs a full-fledged architectural event production studio from <strong>Hebbal Kempapura, Bangalore</strong>. But the philosophy remains unchanged — we don't sell packages, we engineer memories. Every event is personal, every detail matters, and every client is family.</p>
-            <span class="founder-name">— Mohammed Faizan, Founder</span>
+        <div class="ac r">
+          <span class="sl">Our Story</span>
+          <h2 class="st">Where Vision<br /><span class="gold-a">Meets Precision</span></h2>
+          <div class="fn">
+            <p>"I grew up in Chellikere village, watching community celebrations unfold in open fields — raw, honest, full of life. I knew then that I wanted to build moments that mattered."</p>
+            <p>"From those humble beginnings, I set out to redefine event production. Not by following trends, but by understanding people — their stories, their dreams, their idea of perfect."</p>
+            <span class="fname">— Mohammed Faizan, Founder</span>
           </div>
-
-          <p>Based out of Hebbal Kempapura, our specialized team designs environments that mirror your personality, heritage, and style. We control every logistical element from conceptualization to execution, ensuring you remain a guest at your own celebration.</p>
-
-          <div class="stats-row reveal-stagger">
-            <div class="stat-item" data-delay="100">
-              <h3>150</h3>
-              <p>Events Curated</p>
-            </div>
-            <div class="stat-item" data-delay="200">
-              <h3>8</h3>
-              <p>Years Excellence</p>
-            </div>
-            <div class="stat-item" data-delay="300">
-              <h3>100<span style="font-size:0.6em">%</span></h3>
-              <p>Client Delight</p>
-            </div>
+          <p>FZ Eventz is built on a simple belief: every celebration deserves to be extraordinary. We blend architectural thinking with emotional storytelling — designing spaces, experiences, and memories that stand apart.</p>
+          <p>Today, based in Bengaluru, we serve discerning clients who seek not just an event, but a masterpiece. Our work spans luxury weddings, corporate productions, and private celebrations across India.</p>
+          <div class="sr">
+            <div class="si"><h3 data-target="250">0</h3><p>Events Produced</p></div>
+            <div class="si"><h3 data-target="8">0</h3><p>Years Experience</p></div>
+            <div class="si"><h3 data-target="100">0</h3><p>% Client Satisfaction</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FULL-VIEWPORT IMAGE DIVIDER 2 ===== -->
-  <div class="full-image-section">
-    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy">
-    <div class="overlay"></div>
-    <div class="content reveal-scale">
-      <h2>Crafting <span class="gold-accent">Moments</span> That Last Forever</h2>
-      <p>Your story deserves a stage as unique as you are.</p>
+  <!-- ===== FULL-IMAGE DIVIDER 2 ===== -->
+  <div class="fis">
+    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80" alt="Corporate event production" loading="lazy" />
+    <div class="ov"></div>
+    <div class="c">
+      <h2>Where Ambience<br /><span class="gold-a">Tells a Story</span></h2>
+      <p>Every element — light, texture, space, sound — is composed to evoke emotion and create lasting impressions.</p>
     </div>
   </div>
 
-  <!-- ===== EVENTS ===== -->
-  <section class="events" id="events">
+  <!-- ===== EVENTS (PORTFOLIO) ===== -->
+  <section class="ev" id="events">
     <div class="container">
-      <div class="events-header">
-        <span class="section-label">Our Expertise</span>
-        <h2 class="section-title">Curated Event <span class="gold-accent">Portfolios</span></h2>
-        <p class="section-subtitle">Every event is a world of its own. We design four distinct realms of celebration, each with its own language of luxury.</p>
+      <div class="ev-h r">
+        <span class="sl">Our Expertise</span>
+        <h2 class="st">Curated Event<br /><span class="gold-a">Portfolios</span></h2>
+        <p class="ss">Each project is a unique narrative, designed and executed with unmatched attention to detail.</p>
       </div>
-      <div class="events-grid">
-        <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
-          <div class="event-card-body">
-            <span class="card-number">01</span>
-            <span class="event-tag">Celebrations</span>
-            <h3>Birthday Events</h3>
-            <p>Milestones worth framing. Immersive thematic transformations, energetic entertainment planning, and custom spatial builds tailored to all generations.</p>
+      <div class="ev-g">
+        <div class="e-c">
+          <div class="e-c-body">
+            <span class="et">Signature</span>
+            <span class="cn">01</span>
+            <h3>Royal Wedding</h3>
+            <p>A lavish multi-day celebration blending traditional rituals with modern design. Every space — from the mandap to the reception hall — told a story of elegance.</p>
           </div>
+          <img class="e-ci" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Royal Wedding production by FZ Eventz" loading="lazy" />
         </div>
-        <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
-          <div class="event-card-body">
-            <span class="card-number">02</span>
-            <span class="event-tag">Celebrations</span>
-            <h3>Anniversary Galas</h3>
-            <p>Re-igniting the magic. Timeless, elegant gatherings curated with sophisticated floral architecture, ambient acoustic designs, and nostalgic retrospectives.</p>
+        <div class="e-c">
+          <div class="e-c-body">
+            <span class="et">Corporate</span>
+            <span class="cn">02</span>
+            <h3>Tech Summit 2025</h3>
+            <p>A 2,000-person product launch with immersive set design, synchronized lighting, and dynamic stagecraft that kept the audience engaged from start to finish.</p>
           </div>
+          <img class="e-ci" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Corporate Tech Summit by FZ Eventz" loading="lazy" />
         </div>
-        <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
-          <div class="event-card-body">
-            <span class="card-number">03</span>
-            <span class="event-tag">Social</span>
-            <h3>Get Togethers</h3>
-            <p>Reunions that resonate. Intimate, flawlessly coordinated social gatherings focusing on fluid atmospheres and vibrant interactive elements.</p>
+        <div class="e-c">
+          <div class="e-c-body">
+            <span class="et">Social</span>
+            <span class="cn">03</span>
+            <h3>Garden Soirée</h3>
+            <p>An intimate birthday celebration set in a lush private estate. Custom floral installations, ambient lighting, and curated dining created an unforgettable evening.</p>
           </div>
+          <img class="e-ci" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" alt="Garden Soiree by FZ Eventz" loading="lazy" />
         </div>
-        <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
-          <div class="event-card-body">
-            <span class="card-number">04</span>
-            <span class="event-tag">Cuisine</span>
-            <h3>Catering Services</h3>
-            <p>A culinary masterclass. Bespoke menu engineering featuring interactive gourmet live stations, global cuisines, and artisanal presentation standards.</p>
+        <div class="e-c">
+          <div class="e-c-body">
+            <span class="et">Cultural</span>
+            <span class="cn">04</span>
+            <h3>Heritage Gala</h3>
+            <p>A celebration of Indian art and culture, staged at a heritage palace. Traditional crafts met contemporary design in a spectacular showcase of timeless beauty.</p>
           </div>
+          <img class="e-ci" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Heritage Gala by FZ Eventz" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===== FULL-IMAGE DIVIDER 3 ===== -->
+  <div class="fis">
+    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80" alt="Event lighting and ambience" loading="lazy" />
+    <div class="ov"></div>
+    <div class="c">
+      <h2>Beyond Expectations,<br />Every Time</h2>
+      <p>We don&rsquo;t just produce events. We craft experiences that linger in hearts and minds long after the last guests depart.</p>
+    </div>
+  </div>
 
   <!-- ===== WEDDING ===== -->
-  <section class="wedding" id="wedding">
+  <section class="wed" id="wedding">
     <div class="container">
-      <div class="wedding-frame">
-        <div class="wedding-content">
-          <span class="section-label">Signature Experience</span>
-          <h2 class="section-title wedding-title">End-to-End Weddings: <span class="gold-accent">The Grand Canvas</span></h2>
-          <p class="wedding-subtitle">Har shaadi alag hoti hai, aur har budget bhi.</p>
-          <div class="wedding-manifesto">
-            <p>"Price list nahi hai humare paas, kyunki hum package nahi, sapne bechte hain."</p>
-            <p>Baatein karte hain, phir quote banate hain. No pressure.</p>
-            <div class="attribution">— The FZ Eventz Promise</div>
+      <div class="wf">
+        <div class="wc r">
+          <span class="sl">Wedding Services</span>
+          <h2 class="wt">Your Dream Wedding,<br /><span class="gold-a">Expertly Crafted</span></h2>
+          <p class="wsu">"We treat every wedding as a once-in-a-lifetime masterpiece."</p>
+          <div class="wm">
+            <p>"A wedding is not just an event — it&rsquo;s the beginning of a story. At FZ Eventz, we pour our hearts into understanding yours. From the first consultation to the final farewell, we ensure that every moment reflects your unique love."</p>
+            <p>"Our team handles everything — venue curation, set design, hospitality, entertainment, and logistics — so you can focus on what truly matters: celebrating."</p>
+            <span class="at">— Faizan &amp; the FZ Eventz Team</span>
           </div>
-          <div class="wedding-scope reveal-stagger">
-            <div class="scope-item" data-delay="50"><span class="check">✦</span> Comprehensive venue sourcing</div>
-            <div class="scope-item" data-delay="100"><span class="check">✦</span> Custom architectural mandaps</div>
-            <div class="scope-item" data-delay="150"><span class="check">✦</span> High-fidelity lighting design</div>
-            <div class="scope-item" data-delay="200"><span class="check">✦</span> Production management</div>
-            <div class="scope-item" data-delay="250" style="grid-column:1/-1"><span class="check">✦</span> Micro-detailed hospitality coordination</div>
+          <div class="wsc">
+            <span class="si2"><span class="ch">✓</span> Venue Selection &amp; Design</span>
+            <span class="si2"><span class="ch">✓</span> Mandap &amp; Stage Production</span>
+            <span class="si2"><span class="ch">✓</span> Lighting &amp; Sound Engineering</span>
+            <span class="si2"><span class="ch">✓</span> Catering &amp; Hospitality</span>
+            <span class="si2"><span class="ch">✓</span> Photography &amp; Cinematography</span>
+            <span class="si2"><span class="ch">✓</span> Guest Experience Management</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ===== FULL-VIEWPORT IMAGE DIVIDER 3 ===== -->
-  <div class="full-image-section">
-    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy">
-    <div class="overlay"></div>
-    <div class="content reveal-scale">
-      <h2>What Our <span class="gold-accent">Families</span> Say</h2>
-      <p>Over a decade of trust, built one celebration at a time.</p>
-    </div>
-  </div>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials" id="testimonials">
+  <section class="tm" id="testimonials">
     <div class="container">
-      <div class="testimonials-header">
-        <span class="section-label">The Proof</span>
-        <h2 class="section-title">What Our Families <span class="gold-accent">Say</span></h2>
-        <p class="section-subtitle">Real words from real people who trusted us with their most cherished moments.</p>
+      <div class="tm-h r">
+        <span class="sl">Testimonials</span>
+        <h2 class="st">What Our Clients<br /><span class="gold-a">Say About Us</span></h2>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>FZ Eventz transformed our wedding into an absolute fairy tale. The quote process was incredibly transparent—no hidden fees, no pressure, just endless dedication.</p>
-          <div class="testimonial-author">
-            <div class="avatar">AR</div>
-            <div class="info"><h4>Ananya & Vikram Reddy</h4><span>Indiranagar</span></div>
+      <div class="tm-g">
+        <div class="t-c">
+          <span class="qm" aria-hidden="true">"</span>
+          <p>"FZ Eventz transformed our wedding into something we could only dream of. Every detail, from the lighting to the floral arrangements, was meticulously planned and executed. We felt like royalty."</p>
+          <div class="t-au">
+            <div class="av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Priya S." loading="lazy" /></div>
+            <div class="inf"><h4>Priya S.</h4><span>Bengaluru</span></div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Planned my father's 60th birthday with them. The attention to detail on the bespoke menu and retro theme kept our guests talking for weeks. Phenomenal!</p>
-          <div class="testimonial-author">
-            <div class="avatar">KM</div>
-            <div class="info"><h4>Kabir Malhotra</h4><span>Koramangala</span></div>
+        <div class="t-c">
+          <span class="qm" aria-hidden="true">"</span>
+          <p>"Working with Faizan and his team was an absolute privilege. They brought a level of professionalism and creativity to our product launch that exceeded all expectations. Truly world-class."</p>
+          <div class="t-au">
+            <div class="av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Rahul M." loading="lazy" /></div>
+            <div class="inf"><h4>Rahul M.</h4><span>Corporate Client</span></div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Their catering service is extraordinary. The live molecular gastronomy stations at our anniversary party were sophisticated and hygienically flawless.</p>
-          <div class="testimonial-author">
-            <div class="avatar">MS</div>
-            <div class="info"><h4>Dr. Meera Sen</h4><span>Sadashivanagar</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>The phrase 'hum sapne bechte hain' is 100% accurate. Our end-to-end wedding was produced seamlessly. We didn't lift a finger on the big day.</p>
-          <div class="testimonial-author">
-            <div class="avatar">SA</div>
-            <div class="info"><h4>Syed & Aisha</h4><span>Hebbal</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Amazing corporate get-together setup. The themes they curated matched our brand tone effortlessly. Highly recommended team.</p>
-          <div class="testimonial-author">
-            <div class="avatar">RF</div>
-            <div class="info"><h4>Rohan Fernandes</h4><span>Whitefield</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Rare to find an event planner who listens more than they pitch. FZ Eventz turned our scattered thoughts into a stunning minimalist birthday layout.</p>
-          <div class="testimonial-author">
-            <div class="avatar">PS</div>
-            <div class="info"><h4>Priya Sharma</h4><span>Jayanagar</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>From the stunning floral architecture to the lighting cues during our first dance, everything was magical. They respected our budget completely.</p>
-          <div class="testimonial-author">
-            <div class="avatar">NP</div>
-            <div class="info"><h4>Nitin & Preeti</h4><span>Malleshwaram</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Flawless planning. The quick communication via WhatsApp made updates simple throughout the month-long planning cycle.</p>
-          <div class="testimonial-author">
-            <div class="avatar">FA</div>
-            <div class="info"><h4>Farhan Akhtar</h4><span>HSR Layout</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Highly professional crew. Their coordination with vendors and decorators saved us dozens of hours of stress.</p>
-          <div class="testimonial-author">
-            <div class="avatar">SK</div>
-            <div class="info"><h4>Suresh Krishnan</h4><span>Cunningham Road</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <span class="quote-mark">"</span>
-          <p>Breathtaking execution for our 25th anniversary. Creating an intimate, elegant environment unmatched in Bangalore.</p>
-          <div class="testimonial-author">
-            <div class="avatar">NK</div>
-            <div class="info"><h4>Neha Kapoor</h4><span>Lavelle Road</span></div>
+        <div class="t-c">
+          <span class="qm" aria-hidden="true">"</span>
+          <p>"From the initial consultation to the final event, FZ Eventz was incredibly professional and creative. They listened to our vision and brought it to life in ways we never imagined possible."</p>
+          <div class="t-au">
+            <div class="av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Ananya K." loading="lazy" /></div>
+            <div class="inf"><h4>Ananya K.</h4><span>Event Host</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT FORM SECTION ===== -->
-  <section class="contact-section" id="contact">
+  <!-- ===== CONTACT ===== -->
+  <section class="cs" id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info reveal-left">
-          <span class="section-label">Get In Touch</span>
-          <h2>Let's Build Something <span class="gold-accent">Unforgettable</span></h2>
-          <p>Every great event starts with a conversation. Tell us about your vision and let's create magic together. No pressure, just possibilities.</p>
-          <div class="contact-details">
-            <div class="contact-detail">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+91 8970118819</span>
+      <div class="cg">
+        <div class="ci rl">
+          <span class="sl">Get in Touch</span>
+          <h2 class="st">Let&rsquo;s Create<br /><span class="gold-a">Something Extraordinary</span></h2>
+          <p>Every great event begins with a conversation. Tell us about your vision and we&rsquo;ll bring it to life — with passion, precision, and artistry.</p>
+          <div class="cd">
+            <div class="cd-i">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Bengaluru, Karnataka, India</span>
             </div>
-            <div class="contact-detail">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <span>Faizanfaiz0@gmail.com</span>
+            <div class="cd-i">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+919731353830">+91 97313 53830</a>
             </div>
-            <div class="contact-detail">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>No.1, Fortune Valley, Hebbal Kempapura, Bengaluru - 560024</span>
+            <div class="cd-i">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:hello@fzeventz.com">hello@fzeventz.com</a>
             </div>
-            <div class="contact-detail">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--whatsapp)">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              <a href="https://wa.me/918970118819" target="_blank" rel="noopener noreferrer" style="margin:0">Chat on WhatsApp</a>
+            <div class="cd-i">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <span>WhatsApp: +91 97313 53830</span>
             </div>
           </div>
         </div>
-        <div class="contact-form-card reveal-right">
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">Full Name *</label>
-                <input type="text" id="contactName" name="contactName" placeholder="Your name" required>
+        <div class="cfc rr">
+          <form class="cf" id="contactForm" novalidate>
+            <div class="fr">
+              <div class="fg">
+                <label for="cname">Full Name *</label>
+                <input type="text" id="cname" name="name" placeholder="Your name" required />
               </div>
-              <div class="form-group">
-                <label for="contactPhone">Phone *</label>
-                <input type="tel" id="contactPhone" name="contactPhone" placeholder="+91 XXXXX XXXXX" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactEmail">Email</label>
-                <input type="email" id="contactEmail" name="contactEmail" placeholder="your@email.com">
-              </div>
-              <div class="form-group">
-                <label for="contactEvent">Event Type</label>
-                <select id="contactEvent" name="contactEvent">
-                  <option value="">Select type</option>
-                  <option value="Wedding">Wedding</option>
-                  <option value="Birthday">Birthday</option>
-                  <option value="Anniversary">Anniversary</option>
-                  <option value="Get Together">Get Together</option>
-                  <option value="Catering">Catering</option>
-                  <option value="Corporate">Corporate</option>
-                  <option value="Other">Other</option>
-                </select>
+              <div class="fg">
+                <label for="cphone">Phone Number *</label>
+                <input type="tel" id="cphone" name="phone" placeholder="+91 xxxxxxxxxx" required />
               </div>
             </div>
-            <div class="form-group">
-              <label for="contactMessage">Your Vision</label>
-              <textarea id="contactMessage" name="contactMessage" placeholder="Tell us about your event..." rows="4"></textarea>
+            <div class="fg">
+              <label for="cemail">Email Address</label>
+              <input type="email" id="cemail" name="email" placeholder="you@example.com" />
             </div>
-            <button type="submit" class="form-submit">Send Enquiry</button>
+            <div class="fg">
+              <label for="cevent">Event Type</label>
+              <select id="cevent" name="event_type">
+                <option value="">Select event type</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Corporate">Corporate Event</option>
+                <option value="Birthday">Birthday / Anniversary</option>
+                <option value="Social">Social Gathering</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="cmsg">Your Message *</label>
+              <textarea id="cmsg" name="message" placeholder="Tell us about your vision..." required></textarea>
+            </div>
+            <button type="submit" class="fs">Send Message <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polyline points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
           </form>
         </div>
       </div>
@@ -465,82 +303,105 @@
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Ready to Create <span class="gold-accent">Something Extraordinary</span>?</h2>
-        <p>Every great event starts with a conversation. Tell us about your vision and let's build something unforgettable together.</p>
-        <button class="btn-primary" data-open-overlay>
-          Start Your Journey
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </button>
-      </div>
+  <section class="cta">
+    <div class="cta-c r">
+      <h2>Ready to Create<br /><span class="gold-a">Your Masterpiece?</span></h2>
+      <p>Let&rsquo;s discuss your vision over a call. No obligation — just inspiration.</p>
+      <button class="btn-p lp">Book Your Free Consultation</button>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="logo.svg" alt="FZ Eventz" width="220" height="60">
-        <p>Architectural Event Production. We design environments that mirror your personality, heritage, and style — from conceptualization to execution.</p>
+  <!-- ===== FOOTER (FIXED SIZES) ===== -->
+  <footer class="ft">
+    <div class="fg2">
+      <div class="fb">
+        <img src="logo.svg" alt="FZ Eventz" width="160" height="40" />
+        <p>Architectural Event Production based in Bengaluru. We design and produce extraordinary events — from luxury weddings to corporate productions. Every moment, crafted with precision and passion.</p>
       </div>
-      <div class="footer-col">
+      <div class="fc">
         <h4>Quick Links</h4>
-        <a href="#hero">Home</a>
         <a href="#about">About Us</a>
-        <a href="#events">Curated Events</a>
-        <a href="#wedding">Wedding Experience</a>
+        <a href="#events">Our Portfolios</a>
+        <a href="#wedding">Wedding Services</a>
         <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="footer-col">
+      <div class="fc">
         <h4>Services</h4>
-        <a href="#events">Birthday Events</a>
-        <a href="#events">Anniversary Galas</a>
-        <a href="#events">Get Togethers</a>
-        <a href="#events">Catering Services</a>
-        <a href="#wedding">Wedding Planning</a>
+        <a href="#wedding">Wedding Production</a>
+        <a href="#events">Corporate Events</a>
+        <a href="#events">Social Gatherings</a>
+        <a href="#events">Cultural Events</a>
+        <a href="#contact">Consultation</a>
       </div>
-      <div class="footer-col">
-        <h4>Get In Touch</h4>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>+91 8970118819</span>
-        </div>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>Faizanfaiz0@gmail.com</span>
-        </div>
-        <div class="footer-contact-item">
+      <div class="fc">
+        <h4>Get in Touch</h4>
+        <div class="fci">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>No.1, Fortune Valley, Hebbal Kempapura, Bengaluru - 560024</span>
+          <span>Bengaluru, India</span>
         </div>
-        <div class="footer-contact-item">
-          <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;color:var(--wmuted);margin:0;font-size:14px;">
-            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;color:var(--whatsapp)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Chat on WhatsApp
-          </a>
+        <div class="fci">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+919731353830">+91 97313 53830</a>
+        </div>
+        <div class="fci">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:hello@fzeventz.com">hello@fzeventz.com</a>
+        </div>
+        <div class="fci" style="margin-top: 6px;">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="color:var(--wa);flex-shrink:0;margin-top:3px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <a href="https://wa.me/919731353830" target="_blank" style="color:var(--wa)">Chat on WhatsApp</a>
         </div>
       </div>
     </div>
-
-    <div class="footer-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.876!2d77.585!3d13.045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzQyLjAiTiA3N8KwMzUnMDYuMCJF!5e0!3m2!1sen!2sin!4v1"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="FZ Eventz — Fortune Valley, Hebbal Kempapura"
-        aria-label="Map showing FZ Eventz office at Fortune Valley, Hebbal Kempapura, Bangalore"
-      ></iframe>
+    <div class="fm">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497511.231059166!2d77.350729!3d12.953847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfe3e1c8a56f4!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FZ Eventz location — Bengaluru"></iframe>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 FZ Eventz — Architectural Event Production. Crafted with purpose in Bengaluru.</p>
+    <div class="fb2">
+      <p>&copy; 2025 FZ Eventz. All rights reserved. Crafted with passion in Bengaluru.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- ===== FLOATING DOCK (SMALLER) ===== -->
+  <div class="f-dock">
+    <a href="https://wa.me/919731353830" target="_blank" class="d-btn whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="tip">Chat on WhatsApp</span>
+    </a>
+    <button class="d-btn q lp" aria-label="Quick Enquiry">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="tip">Quick Enquiry</span>
+    </button>
+  </div>
+
+  <!-- ===== OVERLAY FORM ===== -->
+  <div class="ov" role="dialog" aria-label="Book a Call">
+    <div class="ov-c">
+      <button class="ov-x" aria-label="Close">&times;</button>
+      <h2 class="gold-a">Let&rsquo;s Talk</h2>
+      <p>Fill in your details and we&rsquo;ll get back to you on WhatsApp within minutes.</p>
+      <form id="leadForm" novalidate>
+        <div class="fg">
+          <label for="leadName">Your Name *</label>
+          <input type="text" id="leadName" placeholder="Full name" required />
+        </div>
+        <div class="fg">
+          <label for="leadPhone">Phone Number *</label>
+          <input type="tel" id="leadPhone" placeholder="+91 xxxxxxxxxx" required />
+        </div>
+        <div class="fg">
+          <label for="leadEmail">Email Address</label>
+          <input type="email" id="leadEmail" placeholder="you@example.com" />
+        </div>
+        <div class="fg">
+          <label for="leadMsg">Your Message</label>
+          <textarea id="leadMsg" placeholder="Tell us about your event..." rows="3"></textarea>
+        </div>
+        <button type="submit" class="fs">Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
