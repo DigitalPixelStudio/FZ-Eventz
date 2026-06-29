@@ -9,21 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050505'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='20' font-weight='700' fill='%23D4AF37' text-anchor='middle'%3EFZ%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23030303'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='20' font-weight='700' fill='%23D4AF37' text-anchor='middle'%3EFZ%3C/text%3E%3C/svg%3E">
   <style>
-    .hero-badge.anim-in { animation: bdgSlide 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both; }
-    .hero-title.anim-in { animation: titleRev 1s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
-    .hero-subtitle.anim-in { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both; }
-    .hero-actions.anim-in { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s both; }
-    .btn-primary { animation: breathe 3s ease-in-out infinite; }
-
-    @keyframes bdgSlide { 0% { opacity:0; transform:translateY(20px) scale(0.95); } 100% { opacity:1; transform:translateY(0) scale(1); } }
-    @keyframes titleRev { 0% { opacity:0; transform:translateY(50px); clip-path:inset(0 0 100% 0); } 100% { opacity:1; transform:translateY(0); clip-path:inset(0 0 0 0); } }
-    @keyframes fadeUp { 0% { opacity:0; transform:translateY(30px); } 100% { opacity:1; transform:translateY(0); } }
-    @keyframes breathe {
-      0%, 100% { transform:scale(1); box-shadow:0 0 0 0 rgba(212,175,55,0.3); }
-      50% { transform:scale(1.04); box-shadow:0 0 40px 12px rgba(212,175,55,0.2); }
-    }
+    .hero-badge.anim-in{animation:bdgS 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both}
+    .hero-title.anim-in{animation:titleR 1s cubic-bezier(0.16,1,0.3,1) 0.4s both}
+    .hero-subtitle.anim-in{animation:fadeU 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both}
+    .hero-actions.anim-in{animation:fadeU 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s both}
+    .btn-primary{animation:breathe 3s ease-in-out infinite}
+    @keyframes bdgS{0%{opacity:0;transform:translateY(20px) scale(0.95)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes titleR{0%{opacity:0;transform:translateY(60px);clip-path:inset(0 0 100% 0)}100%{opacity:1;transform:translateY(0);clip-path:inset(0 0 0 0)}}
+    @keyframes fadeU{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,0.3)}50%{transform:scale(1.05);box-shadow:0 0 50px 15px rgba(212,175,55,0.2)}}
   </style>
 </head>
 <body>
@@ -32,7 +28,7 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="#hero" class="nav-logo" aria-label="FZ Eventz Home">
-        <img src="logo.svg" alt="FZ Eventz" width="180" height="50">
+        <img src="logo.svg" alt="FZ Eventz" width="220" height="60">
       </a>
       <div class="nav-links">
         <a href="#hero">Home</a>
@@ -40,7 +36,7 @@
         <a href="#events">Curated Events</a>
         <a href="#wedding">Wedding Experience</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#footer">Locate Us</a>
+        <a href="#contact">Contact</a>
         <button class="nav-cta" data-open-overlay>Enquire Now</button>
       </div>
       <div class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
@@ -49,15 +45,15 @@
     </div>
   </nav>
 
-  <!-- ===== MOBILE MENU ===== -->
+  <!-- ===== MOBILE ===== -->
   <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <a href="#hero">Home</a>
     <a href="#about">About Us</a>
     <a href="#events">Curated Events</a>
     <a href="#wedding">Wedding Experience</a>
     <a href="#testimonials">Testimonials</a>
-    <a href="#footer">Locate Us</a>
-    <button class="nav-cta" data-open-overlay style="background:var(--gold-gradient);color:var(--black)!important;border:none;padding:14px 36px;font-size:15px;border-radius:10px">Enquire Now</button>
+    <a href="#contact">Contact</a>
+    <button class="nav-cta" data-open-overlay style="background:var(--gold-gradient);color:var(--black)!important;border:none;padding:14px 36px;font-size:15px;border-radius:12px">Enquire Now</button>
   </div>
 
   <!-- ===== FLOATING DOCK ===== -->
@@ -77,7 +73,7 @@
     </button>
   </div>
 
-  <!-- ===== LEAD FORM ===== -->
+  <!-- ===== OVERLAY FORM ===== -->
   <div class="overlay" id="leadOverlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
     <div class="overlay-content">
       <button class="overlay-close" aria-label="Close form">&times;</button>
@@ -123,9 +119,10 @@
     <div class="hero-bg">
       <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2070&auto=format&fit=crop" alt="" class="hero-img" loading="eager">
       <div class="overlay-grad"></div>
-      <div class="floating-orb orb-1"></div>
-      <div class="floating-orb orb-2"></div>
+      <div class="floating-orb o1"></div>
+      <div class="floating-orb o2"></div>
     </div>
+    <div class="hero-watermark">FZ</div>
     <div class="hero-content">
       <div class="hero-badge anim-in">Bangalore's Premier Event Studio</div>
       <h1 class="hero-title anim-in">
@@ -152,17 +149,22 @@
     </div>
   </section>
 
+  <!-- ===== FULL-VIEWPORT IMAGE DIVIDER 1 ===== -->
+  <div class="full-image-section">
+    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy">
+    <div class="overlay"></div>
+    <div class="content reveal-scale">
+      <h2>Every <span class="gold-accent">Detail</span> Matters</h2>
+      <p>From the first sketch to the final bow — we orchestrate every moment with precision.</p>
+    </div>
+  </div>
+
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrapper reveal-left">
-          <img
-            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop"
-            alt="FZ Eventz"
-            class="about-image"
-            loading="lazy"
-          >
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop" alt="FZ Eventz" class="about-image" loading="lazy">
         </div>
         <div class="about-content reveal-right">
           <span class="section-label">About The Studio</span>
@@ -179,15 +181,15 @@
 
           <div class="stats-row reveal-stagger">
             <div class="stat-item" data-delay="100">
-              <h3>150+</h3>
+              <h3>150</h3>
               <p>Events Curated</p>
             </div>
             <div class="stat-item" data-delay="200">
-              <h3>8+</h3>
+              <h3>8</h3>
               <p>Years Excellence</p>
             </div>
             <div class="stat-item" data-delay="300">
-              <h3>100%</h3>
+              <h3>100<span style="font-size:0.6em">%</span></h3>
               <p>Client Delight</p>
             </div>
           </div>
@@ -195,6 +197,16 @@
       </div>
     </div>
   </section>
+
+  <!-- ===== FULL-VIEWPORT IMAGE DIVIDER 2 ===== -->
+  <div class="full-image-section">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy">
+    <div class="overlay"></div>
+    <div class="content reveal-scale">
+      <h2>Crafting <span class="gold-accent">Moments</span> That Last Forever</h2>
+      <p>Your story deserves a stage as unique as you are.</p>
+    </div>
+  </div>
 
   <!-- ===== EVENTS ===== -->
   <section class="events" id="events">
@@ -206,7 +218,7 @@
       </div>
       <div class="events-grid">
         <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop" alt="Birthday celebration" class="event-card-image" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
           <div class="event-card-body">
             <span class="card-number">01</span>
             <span class="event-tag">Celebrations</span>
@@ -215,7 +227,7 @@
           </div>
         </div>
         <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" alt="Anniversary gala" class="event-card-image" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
           <div class="event-card-body">
             <span class="card-number">02</span>
             <span class="event-tag">Celebrations</span>
@@ -224,7 +236,7 @@
           </div>
         </div>
         <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" alt="Get together" class="event-card-image" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
           <div class="event-card-body">
             <span class="card-number">03</span>
             <span class="event-tag">Social</span>
@@ -233,7 +245,7 @@
           </div>
         </div>
         <div class="event-card">
-          <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" alt="Catering" class="event-card-image" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" alt="" class="event-card-image" loading="lazy">
           <div class="event-card-body">
             <span class="card-number">04</span>
             <span class="event-tag">Cuisine</span>
@@ -253,13 +265,11 @@
           <span class="section-label">Signature Experience</span>
           <h2 class="section-title wedding-title">End-to-End Weddings: <span class="gold-accent">The Grand Canvas</span></h2>
           <p class="wedding-subtitle">Har shaadi alag hoti hai, aur har budget bhi.</p>
-
           <div class="wedding-manifesto">
             <p>"Price list nahi hai humare paas, kyunki hum package nahi, sapne bechte hain."</p>
             <p>Baatein karte hain, phir quote banate hain. No pressure.</p>
             <div class="attribution">— The FZ Eventz Promise</div>
           </div>
-
           <div class="wedding-scope reveal-stagger">
             <div class="scope-item" data-delay="50"><span class="check">✦</span> Comprehensive venue sourcing</div>
             <div class="scope-item" data-delay="100"><span class="check">✦</span> Custom architectural mandaps</div>
@@ -272,6 +282,16 @@
     </div>
   </section>
 
+  <!-- ===== FULL-VIEWPORT IMAGE DIVIDER 3 ===== -->
+  <div class="full-image-section">
+    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy">
+    <div class="overlay"></div>
+    <div class="content reveal-scale">
+      <h2>What Our <span class="gold-accent">Families</span> Say</h2>
+      <p>Over a decade of trust, built one celebration at a time.</p>
+    </div>
+  </div>
+
   <!-- ===== TESTIMONIALS ===== -->
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -283,35 +303,26 @@
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>FZ Eventz transformed our wedding into an absolute fairy tale. The quote process was incredibly transparent—no hidden fees, no pressure, just endless dedication to what we envisioned.</p>
+          <p>FZ Eventz transformed our wedding into an absolute fairy tale. The quote process was incredibly transparent—no hidden fees, no pressure, just endless dedication.</p>
           <div class="testimonial-author">
             <div class="avatar">AR</div>
-            <div class="info">
-              <h4>Ananya & Vikram Reddy</h4>
-              <span>Indiranagar</span>
-            </div>
+            <div class="info"><h4>Ananya & Vikram Reddy</h4><span>Indiranagar</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>Planned my father's 60th birthday with them. The attention to detail on the bespoke menu and retro theme kept our guests talking for weeks. Phenomenal execution!</p>
+          <p>Planned my father's 60th birthday with them. The attention to detail on the bespoke menu and retro theme kept our guests talking for weeks. Phenomenal!</p>
           <div class="testimonial-author">
             <div class="avatar">KM</div>
-            <div class="info">
-              <h4>Kabir Malhotra</h4>
-              <span>Koramangala</span>
-            </div>
+            <div class="info"><h4>Kabir Malhotra</h4><span>Koramangala</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>Their catering service is extraordinary. The live molecular gastronomy stations at our anniversary party were sophisticated and executed with perfect hygiene standards.</p>
+          <p>Their catering service is extraordinary. The live molecular gastronomy stations at our anniversary party were sophisticated and hygienically flawless.</p>
           <div class="testimonial-author">
             <div class="avatar">MS</div>
-            <div class="info">
-              <h4>Dr. Meera Sen</h4>
-              <span>Sadashivanagar</span>
-            </div>
+            <div class="info"><h4>Dr. Meera Sen</h4><span>Sadashivanagar</span></div>
           </div>
         </div>
         <div class="testimonial-card">
@@ -319,43 +330,31 @@
           <p>The phrase 'hum sapne bechte hain' is 100% accurate. Our end-to-end wedding was produced seamlessly. We didn't lift a finger on the big day.</p>
           <div class="testimonial-author">
             <div class="avatar">SA</div>
-            <div class="info">
-              <h4>Syed & Aisha</h4>
-              <span>Hebbal</span>
-            </div>
+            <div class="info"><h4>Syed & Aisha</h4><span>Hebbal</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>Amazing corporate get-together setup. The animations and themes they curated on-site matched our brand tone effortlessly. Highly recommended team.</p>
+          <p>Amazing corporate get-together setup. The themes they curated matched our brand tone effortlessly. Highly recommended team.</p>
           <div class="testimonial-author">
             <div class="avatar">RF</div>
-            <div class="info">
-              <h4>Rohan Fernandes</h4>
-              <span>Whitefield</span>
-            </div>
+            <div class="info"><h4>Rohan Fernandes</h4><span>Whitefield</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>It is rare to find an event planner who listens more than they pitch. FZ Eventz took our scattered thoughts and turned them into a stunning minimalist birthday layout.</p>
+          <p>Rare to find an event planner who listens more than they pitch. FZ Eventz turned our scattered thoughts into a stunning minimalist birthday layout.</p>
           <div class="testimonial-author">
             <div class="avatar">PS</div>
-            <div class="info">
-              <h4>Priya Sharma</h4>
-              <span>Jayanagar</span>
-            </div>
+            <div class="info"><h4>Priya Sharma</h4><span>Jayanagar</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>From the stunning floral architecture to the lighting cues during our first dance, everything was magical. They respected our budget constraints completely.</p>
+          <p>From the stunning floral architecture to the lighting cues during our first dance, everything was magical. They respected our budget completely.</p>
           <div class="testimonial-author">
             <div class="avatar">NP</div>
-            <div class="info">
-              <h4>Nitin & Preeti</h4>
-              <span>Malleshwaram</span>
-            </div>
+            <div class="info"><h4>Nitin & Preeti</h4><span>Malleshwaram</span></div>
           </div>
         </div>
         <div class="testimonial-card">
@@ -363,33 +362,103 @@
           <p>Flawless planning. The quick communication via WhatsApp made updates simple throughout the month-long planning cycle.</p>
           <div class="testimonial-author">
             <div class="avatar">FA</div>
-            <div class="info">
-              <h4>Farhan Akhtar</h4>
-              <span>HSR Layout</span>
-            </div>
+            <div class="info"><h4>Farhan Akhtar</h4><span>HSR Layout</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>Highly professional crew. Their coordination with external vendors and custom decorators saved us dozens of hours of stress.</p>
+          <p>Highly professional crew. Their coordination with vendors and decorators saved us dozens of hours of stress.</p>
           <div class="testimonial-author">
             <div class="avatar">SK</div>
-            <div class="info">
-              <h4>Suresh Krishnan</h4>
-              <span>Cunningham Road</span>
-            </div>
+            <div class="info"><h4>Suresh Krishnan</h4><span>Cunningham Road</span></div>
           </div>
         </div>
         <div class="testimonial-card">
           <span class="quote-mark">"</span>
-          <p>Breathtaking execution for our 25th anniversary. The team's ability to create an intimate, elegant, yet highly functional environment is unmatched in Bangalore.</p>
+          <p>Breathtaking execution for our 25th anniversary. Creating an intimate, elegant environment unmatched in Bangalore.</p>
           <div class="testimonial-author">
             <div class="avatar">NK</div>
-            <div class="info">
-              <h4>Neha Kapoor</h4>
-              <span>Lavelle Road</span>
+            <div class="info"><h4>Neha Kapoor</h4><span>Lavelle Road</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT FORM SECTION ===== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <span class="section-label">Get In Touch</span>
+          <h2>Let's Build Something <span class="gold-accent">Unforgettable</span></h2>
+          <p>Every great event starts with a conversation. Tell us about your vision and let's create magic together. No pressure, just possibilities.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>+91 8970118819</span>
+            </div>
+            <div class="contact-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>Faizanfaiz0@gmail.com</span>
+            </div>
+            <div class="contact-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>No.1, Fortune Valley, Hebbal Kempapura, Bengaluru - 560024</span>
+            </div>
+            <div class="contact-detail">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--whatsapp)">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <a href="https://wa.me/918970118819" target="_blank" rel="noopener noreferrer" style="margin:0">Chat on WhatsApp</a>
             </div>
           </div>
+        </div>
+        <div class="contact-form-card reveal-right">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name *</label>
+                <input type="text" id="contactName" name="contactName" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Phone *</label>
+                <input type="tel" id="contactPhone" name="contactPhone" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" name="contactEmail" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label for="contactEvent">Event Type</label>
+                <select id="contactEvent" name="contactEvent">
+                  <option value="">Select type</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Get Together">Get Together</option>
+                  <option value="Catering">Catering</option>
+                  <option value="Corporate">Corporate</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Your Vision</label>
+              <textarea id="contactMessage" name="contactMessage" placeholder="Tell us about your event..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Enquiry</button>
+          </form>
         </div>
       </div>
     </div>
@@ -400,7 +469,7 @@
     <div class="container">
       <div class="cta-content">
         <h2>Ready to Create <span class="gold-accent">Something Extraordinary</span>?</h2>
-        <p>Every great event starts with a conversation. Tell us about your vision and let's build something unforgettable together. No pressure, just possibilities.</p>
+        <p>Every great event starts with a conversation. Tell us about your vision and let's build something unforgettable together.</p>
         <button class="btn-primary" data-open-overlay>
           Start Your Journey
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -415,7 +484,7 @@
   <footer class="footer" id="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.svg" alt="FZ Eventz" width="180" height="50">
+        <img src="logo.svg" alt="FZ Eventz" width="220" height="60">
         <p>Architectural Event Production. We design environments that mirror your personality, heritage, and style — from conceptualization to execution.</p>
       </div>
       <div class="footer-col">
@@ -437,30 +506,20 @@
       <div class="footer-col">
         <h4>Get In Touch</h4>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>+91 8970118819</span>
         </div>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span>Faizanfaiz0@gmail.com</span>
         </div>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>No.1, Fortune Valley, Hebbal Kempapura, Bengaluru - 560024</span>
         </div>
         <div class="footer-contact-item">
-          <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;color:var(--white-muted);margin:0;font-size:14px;">
-            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;color:var(--whatsapp)">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
+          <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;color:var(--wmuted);margin:0;font-size:14px;">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;color:var(--whatsapp)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Chat on WhatsApp
           </a>
         </div>
