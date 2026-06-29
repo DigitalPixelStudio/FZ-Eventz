@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="25%" stop-color="#FFF2CD"/>
+      <stop offset="50%" stop-color="#F0D060"/>
+      <stop offset="75%" stop-color="#FFF2CD"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#FFF2CD"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <!-- Giant Crest -->
+  <g transform="translate(50, 20)">
+    <path d="M0 60 L60 0 L120 60 L120 130 L60 190 L0 130 Z" fill="none" stroke="url(#g1)" stroke-width="3.5"/>
+    <path d="M15 68 L60 23 L105 68 L105 122 L60 167 L15 122 Z" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.2"/>
+    <text x="60" y="118" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700" fill="url(#g1)" text-anchor="middle" letter-spacing="3">FZ</text>
+    <polygon points="0,70 -9,79 0,88 9,79" fill="url(#g1)"/>
+    <polygon points="120,70 111,79 120,88 129,79" fill="url(#g1)"/>
+    <polygon points="0,115 -9,124 0,133 9,124" fill="url(#g1)"/>
+    <polygon points="120,115 111,124 120,133 129,124" fill="url(#g1)"/>
+    <polygon points="60,185 53,194 60,203 67,194" fill="url(#g1)"/>
+    <polygon points="60,-3 53,6 60,15 67,6" fill="url(#g1)"/>
+  </g>
+  <!-- Company Name -->
+  <g transform="translate(210, 32)">
+    <text x="0" y="62" font-family="'Playfair Display', Georgia, serif" font-size="54" font-weight="700" fill="#FFFFFF" letter-spacing="8">FZ EVENTZ</text>
+    <text x="0" y="102" font-family="'Inter', Arial, sans-serif" font-size="13" font-weight="300" fill="url(#g2)" letter-spacing="8">ARCHITECTURAL EVENT PRODUCTION</text>
+    <rect x="0" y="118" width="120" height="3" rx="1.5" fill="url(#g2)"/>
+    <text x="0" y="148" font-family="'Inter', Arial, sans-serif" font-size="12" font-weight="400" fill="rgba(255,255,255,0.3)" letter-spacing="5">BENGALURU · INDIA</text>
+  </g>
+</svg>
