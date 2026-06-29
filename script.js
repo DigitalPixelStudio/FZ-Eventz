@@ -99,7 +99,7 @@
     }
   }, 100);
 
-  /* === STATS COUNTER === */
+  /* === STATS COUNTER (FIXED) === */
   const sn = document.querySelectorAll('.si h3');
   if(sn.length){
     let counted = false;
@@ -111,13 +111,14 @@
           sn.forEach(s => {
             const t = parseInt(s.getAttribute('data-target')) || 0;
             if(t === 0) { s.textContent = '∞'; return; }
-            let st = 0, sd = t > 100 ? 0.05 : 0.03, last = performance.now();
-            function an(now){
-              const dt = (now - last) / 1000;
-              last = now;
-              st = Math.min(st + dt / (3 + t/200), t);
-              s.textContent = Math.floor(st) + (t >= 1000 ? '+' : '');
-              if(st < t) requestAnimationFrame(an);
+            let start = null, dur = 2000;
+            function an(ts){
+              if(!start) start = ts;
+              const p = Math.min((ts - start) / dur, 1);
+              const ease = 1 - Math.pow(1 - p, 3);
+              const cur = Math.round(ease * t);
+              s.textContent = cur + (t >= 250 ? '+' : '');
+              if(p < 1) requestAnimationFrame(an);
               else s.textContent = t + (t >= 100 ? '+' : '');
             }
             requestAnimationFrame(an);
