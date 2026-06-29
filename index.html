@@ -9,7 +9,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0A0A'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='20' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EFZ%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080808'/%3E%3Ctext x='16' y='23' font-family='Georgia, serif' font-size='20' font-weight='700' fill='%23D4AF37' text-anchor='middle'%3EFZ%3C/text%3E%3C/svg%3E">
+  <style>
+    .hero-badge.animate-in { animation: badgeSlide 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+    .hero-title.animate-in { animation: titleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
+    .hero-subtitle.animate-in { animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both; }
+    .hero-actions.animate-in { animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both; }
+    .btn-primary { animation: breathe 3s ease-in-out infinite; }
+
+    @keyframes badgeSlide {
+      0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes titleReveal {
+      0% { opacity: 0; transform: translateY(40px); clip-path: inset(0 0 100% 0); }
+      100% { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); }
+    }
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,7 +37,11 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="#hero" class="nav-logo" aria-label="FZ Eventz Home">
-        <img src="logo.svg" alt="FZ Eventz" width="160" height="48">
+        <div class="logo-icon">FZ</div>
+        <div class="logo-text">
+          <span>FZ EVENTZ</span>
+          <span>Architectural Event Production</span>
+        </div>
       </a>
       <div class="nav-links">
         <a href="#hero">Home</a>
@@ -42,12 +66,12 @@
     <a href="#wedding">Wedding Experience</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#footer">Locate Us</a>
-    <button class="nav-cta" data-open-overlay style="background:var(--gold);color:var(--black)!important;border:none;padding:12px 32px;font-size:15px">Enquire Now</button>
+    <button class="nav-cta" data-open-overlay style="background:var(--gold-gradient);color:var(--black)!important;border:none;padding:14px 36px;font-size:15px;border-radius:10px">Enquire Now</button>
   </div>
 
   <!-- ===== Floating Dock ===== -->
   <div class="floating-dock" role="complementary" aria-label="Quick actions">
-    <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" class="dock-btn" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" class="dock-btn whatsapp" aria-label="Chat on WhatsApp">
       <span class="tooltip">Chat on WhatsApp</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
@@ -67,7 +91,7 @@
     <div class="overlay-content">
       <button class="overlay-close" aria-label="Close form">&times;</button>
       <h2 id="overlay-title">Let's Create Together</h2>
-      <p>Tell us about your vision and we'll craft something unforgettable.</p>
+      <p>Tell us about your vision — we'll handle the rest.</p>
       <form id="leadForm">
         <div class="form-group">
           <label for="name">Full Name *</label>
@@ -106,21 +130,22 @@
   <!-- ===== Hero Section ===== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" alt="Luxury event" class="hero-image" loading="eager">
+      <div class="overlay-grad"></div>
       <div class="gradient-orb orb-1"></div>
       <div class="gradient-orb orb-2"></div>
-      <div class="grid-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge">Bangalore's Premier Event Studio</div>
-      <h1 class="hero-title">
+      <div class="hero-badge animate-in">Bangalore's Premier Event Studio</div>
+      <h1 class="hero-title animate-in">
         We Don't Plan Events.
         <span class="line-break gold-accent">We Engineer Core Memories.</span>
       </h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle animate-in">
         Crafting breathtaking luxury experiences across Bangalore. From private milestones
         to cinematic weddings, your vision is our canvas.
       </p>
-      <div class="hero-actions">
+      <div class="hero-actions animate-in">
         <button class="btn-primary" data-open-overlay>
           Begin Your Journey
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -140,46 +165,29 @@
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-visual">
-          <div class="placeholder-box">
-            <div class="pattern"></div>
-            <div class="emblem">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="76" height="76" rx="8" stroke="url(#goldGrad)" stroke-width="2" fill="none" opacity="0.5"/>
-                <text x="40" y="50" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" fill="url(#goldGrad)" text-anchor="middle" opacity="0.5">FZ</text>
-                <defs>
-                  <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#C9A84C"/>
-                    <stop offset="50%" stop-color="#F0D68A"/>
-                    <stop offset="100%" stop-color="#C9A84C"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
+        <div class="about-image-wrapper reveal-left">
+          <img
+            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop"
+            alt="FZ Eventz studio and team"
+            class="about-image img-frame"
+            loading="lazy"
+          >
         </div>
-        <div class="about-content">
+        <div class="about-content reveal-right">
           <span class="section-label">About The Studio</span>
           <h2 class="section-title">Personal. Original. <span class="gold-accent">Uncompromising.</span></h2>
-          <p>
-            At FZ Eventz, we stepped away from the industrial, cookie-cutter catalog approach.
-            Based out of Hebbal Kempapura, our specialized team designs environments that mirror
-            your personality, heritage, and style.
-          </p>
-          <p>
-            We control every logistical element from conceptualization to execution, ensuring you
-            remain a guest at your own celebration.
-          </p>
-          <div class="stats-row">
-            <div class="stat-item">
+          <p>At FZ Eventz, we stepped away from the industrial, cookie-cutter catalog approach. Based out of Hebbal Kempapura, our specialized team designs environments that mirror your personality, heritage, and style.</p>
+          <p>We control every logistical element from conceptualization to execution, ensuring you remain a guest at your own celebration.</p>
+          <div class="stats-row reveal-stagger">
+            <div class="stat-item" data-delay="100">
               <h3>150+</h3>
               <p>Events Curated</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-item" data-delay="200">
               <h3>8+</h3>
               <p>Years Excellence</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-item" data-delay="300">
               <h3>100%</h3>
               <p>Client Delight</p>
             </div>
@@ -195,51 +203,64 @@
       <div class="events-header">
         <span class="section-label">Our Expertise</span>
         <h2 class="section-title">Curated Event <span class="gold-accent">Portfolios</span></h2>
-        <p class="section-subtitle">
-          Every event is a world of its own. We design four distinct realms of celebration,
-          each with its own language of luxury.
-        </p>
+        <p class="section-subtitle">Every event is a world of its own. We design four distinct realms of celebration, each with its own language of luxury.</p>
       </div>
       <div class="events-grid">
         <div class="event-card">
-          <span class="card-number">01</span>
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
+          <img
+            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop"
+            alt="Birthday celebration"
+            class="event-card-image"
+            loading="lazy"
+          >
+          <div class="event-card-body">
+            <span class="card-number">01</span>
+            <span class="event-tag">Celebrations</span>
+            <h3>Birthday Events</h3>
+            <p>Milestones worth framing. Immersive thematic transformations, energetic entertainment planning, and custom spatial builds tailored to all generations.</p>
           </div>
-          <h3>Birthday Events</h3>
-          <p>Milestones worth framing. Immersive thematic transformations, energetic entertainment planning, and custom spatial builds tailored to all generations.</p>
         </div>
         <div class="event-card">
-          <span class="card-number">02</span>
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="6"/><path d="M12 2v6"/><path d="M12 14v8"/><path d="M4.93 10.93l4.24 4.24"/><path d="M14.83 14.83l4.24 4.24"/><path d="M2 18h4"/><path d="M18 18h4"/>
-            </svg>
+          <img
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop"
+            alt="Anniversary gala"
+            class="event-card-image"
+            loading="lazy"
+          >
+          <div class="event-card-body">
+            <span class="card-number">02</span>
+            <span class="event-tag">Celebrations</span>
+            <h3>Anniversary Galas</h3>
+            <p>Re-igniting the magic. Timeless, elegant gatherings curated with sophisticated floral architecture, ambient acoustic designs, and nostalgic retrospectives.</p>
           </div>
-          <h3>Anniversary Galas</h3>
-          <p>Re-igniting the magic. Timeless, elegant gatherings curated with sophisticated floral architecture, ambient acoustic designs, and nostalgic retrospectives.</p>
         </div>
         <div class="event-card">
-          <span class="card-number">03</span>
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
+          <img
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop"
+            alt="Get together event"
+            class="event-card-image"
+            loading="lazy"
+          >
+          <div class="event-card-body">
+            <span class="card-number">03</span>
+            <span class="event-tag">Social</span>
+            <h3>Get Togethers</h3>
+            <p>Reunions that resonate. Intimate, flawlessly coordinated social gatherings focusing on fluid atmospheres and vibrant interactive elements.</p>
           </div>
-          <h3>Get Togethers</h3>
-          <p>Reunions that resonate. Intimate, flawlessly coordinated social gatherings focusing on fluid atmospheres and vibrant interactive elements.</p>
         </div>
         <div class="event-card">
-          <span class="card-number">04</span>
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
+          <img
+            src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop"
+            alt="Catering service"
+            class="event-card-image"
+            loading="lazy"
+          >
+          <div class="event-card-body">
+            <span class="card-number">04</span>
+            <span class="event-tag">Cuisine</span>
+            <h3>Catering Services</h3>
+            <p>A culinary masterclass. Bespoke menu engineering featuring interactive gourmet live stations, global cuisines, and artisanal presentation standards.</p>
           </div>
-          <h3>Catering Services</h3>
-          <p>A culinary masterclass. Bespoke menu engineering featuring interactive gourmet live stations, global cuisines, and artisanal presentation standards.</p>
         </div>
       </div>
     </div>
@@ -247,38 +268,30 @@
 
   <!-- ===== Wedding Section ===== -->
   <section class="wedding" id="wedding">
+    <div class="wedding-bg">
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2070&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+      <div class="overlay"></div>
+    </div>
     <div class="container">
       <div class="wedding-frame">
         <div class="wedding-content">
           <span class="section-label">Signature Experience</span>
           <h2 class="section-title wedding-title">End-to-End Weddings: <span class="gold-accent">The Grand Canvas</span></h2>
-          <p class="wedding-subtitle">— Har shaadi alag hoti hai, aur har budget bhi. —</p>
+          <p class="wedding-subtitle">Har shaadi alag hoti hai, aur har budget bhi.</p>
 
           <div class="wedding-manifesto">
             <p>"Price list nahi hai humare paas, kyunki hum package nahi, sapne bechte hain."</p>
             <p>Baatein karte hain, phir quote banate hain. No pressure.</p>
+            <div class="attribution">— The FZ Eventz Promise</div>
           </div>
 
-          <div class="wedding-scope">
-            <div class="scope-item">
-              <span class="check">✦</span>
-              Comprehensive venue sourcing
-            </div>
-            <div class="scope-item">
-              <span class="check">✦</span>
-              Custom architectural mandaps
-            </div>
-            <div class="scope-item">
-              <span class="check">✦</span>
-              High-fidelity lighting design
-            </div>
-            <div class="scope-item">
-              <span class="check">✦</span>
-              Production management
-            </div>
-            <div class="scope-item" style="grid-column: 1 / -1;">
-              <span class="check">✦</span>
-              Micro-detailed hospitality coordination
+          <div class="wedding-scope reveal-stagger">
+            <div class="scope-item" data-delay="50"><span class="check">✦</span> Comprehensive venue sourcing</div>
+            <div class="scope-item" data-delay="100"><span class="check">✦</span> Custom architectural mandaps</div>
+            <div class="scope-item" data-delay="150"><span class="check">✦</span> High-fidelity lighting design</div>
+            <div class="scope-item" data-delay="200"><span class="check">✦</span> Production management</div>
+            <div class="scope-item" data-delay="250" style="grid-column: 1 / -1;">
+              <span class="check">✦</span> Micro-detailed hospitality coordination
             </div>
           </div>
         </div>
@@ -292,13 +305,11 @@
       <div class="testimonials-header">
         <span class="section-label">The Proof</span>
         <h2 class="section-title">What Our Families <span class="gold-accent">Say</span></h2>
-        <p class="section-subtitle">
-          Real words from real people who trusted us with their most cherished moments.
-        </p>
+        <p class="section-subtitle">Real words from real people who trusted us with their most cherished moments.</p>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>FZ Eventz transformed our wedding into an absolute fairy tale. The quote process was incredibly transparent—no hidden fees, no pressure, just endless dedication to what we envisioned.</p>
           <div class="testimonial-author">
             <div class="avatar">AR</div>
@@ -309,7 +320,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>Planned my father's 60th birthday with them. The attention to detail on the bespoke menu and retro theme kept our guests talking for weeks. Phenomenal execution!</p>
           <div class="testimonial-author">
             <div class="avatar">KM</div>
@@ -320,7 +331,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>Their catering service is extraordinary. The live molecular gastronomy stations at our anniversary party were sophisticated and executed with perfect hygiene standards.</p>
           <div class="testimonial-author">
             <div class="avatar">MS</div>
@@ -331,7 +342,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>The phrase 'hum sapne bechte hain' is 100% accurate. Our end-to-end wedding was produced seamlessly. We didn't lift a finger on the big day.</p>
           <div class="testimonial-author">
             <div class="avatar">SA</div>
@@ -342,7 +353,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>Amazing corporate get-together setup. The animations and themes they curated on-site matched our brand tone effortlessly. Highly recommended team.</p>
           <div class="testimonial-author">
             <div class="avatar">RF</div>
@@ -353,7 +364,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>It is rare to find an event planner who listens more than they pitch. FZ Eventz took our scattered thoughts and turned them into a stunning minimalist birthday layout.</p>
           <div class="testimonial-author">
             <div class="avatar">PS</div>
@@ -364,7 +375,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>From the stunning floral architecture to the lighting cues during our first dance, everything was magical. They respected our budget constraints completely.</p>
           <div class="testimonial-author">
             <div class="avatar">NP</div>
@@ -375,7 +386,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>Flawless planning. The quick communication via WhatsApp made updates simple throughout the month-long planning cycle.</p>
           <div class="testimonial-author">
             <div class="avatar">FA</div>
@@ -386,7 +397,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="quote-icon">"</div>
+          <span class="quote-mark">"</span>
           <p>Highly professional crew. Their coordination with external vendors and custom decorators saved us dozens of hours of stress.</p>
           <div class="testimonial-author">
             <div class="avatar">SK</div>
@@ -396,8 +407,8 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card" style="grid-column: span 1;">
-          <div class="quote-icon">"</div>
+        <div class="testimonial-card">
+          <span class="quote-mark">"</span>
           <p>Breathtaking execution for our 25th anniversary. The team's ability to create an intimate, elegant, yet highly functional environment is unmatched in Bangalore.</p>
           <div class="testimonial-author">
             <div class="avatar">NK</div>
@@ -411,11 +422,27 @@
     </div>
   </section>
 
+  <!-- ===== CTA Section ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Create <span class="gold-accent">Something Extraordinary</span>?</h2>
+        <p>Every great event starts with a conversation. Tell us about your vision and let's build something unforgettable together. No pressure, just possibilities.</p>
+        <button class="btn-primary" data-open-overlay>
+          Start Your Journey
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== Footer ===== -->
   <footer class="footer" id="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.svg" alt="FZ Eventz" width="160" height="48">
+        <div class="logo-icon">FZ</div>
         <p>Architectural Event Production. We design environments that mirror your personality, heritage, and style — from conceptualization to execution.</p>
       </div>
       <div class="footer-col">
@@ -454,7 +481,15 @@
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
             <circle cx="12" cy="10" r="3"/>
           </svg>
-          <span>No.1, Fortune Valley, Hebbal Kempapura, Bengaluru, Karnataka - 560024</span>
+          <span>No.1, Fortune Valley, Hebbal Kempapura, Bengaluru - 560024</span>
+        </div>
+        <div class="footer-contact-item">
+          <a href="https://wa.me/918970118819?text=Hi%20FZ%20Eventz,%20I%27d%20like%20to%20discuss%20an%20upcoming%20event" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;color:var(--white-muted);margin:0;font-size:14px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:var(--gold)">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -464,13 +499,13 @@
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.876!2d77.585!3d13.045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzQyLjAiTiA3N8KwMzUnMDYuMCJF!5e0!3m2!1sen!2sin!4v1"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="FZ Eventz Location — Fortune Valley, Hebbal Kempapura"
-        aria-label="Map showing FZ Eventz office location in Hebbal Kempapura, Bangalore">
-      </iframe>
+        title="FZ Eventz — Fortune Valley, Hebbal Kempapura"
+        aria-label="Map showing FZ Eventz office at Fortune Valley, Hebbal Kempapura, Bangalore"
+      ></iframe>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 FZ Eventz — Architectural Event Production. All rights reserved. Crafted with purpose in Bengaluru.</p>
+      <p>&copy; 2026 FZ Eventz — Architectural Event Production. Crafted with purpose in Bengaluru.</p>
     </div>
   </footer>
 
