@@ -1,12 +1,12 @@
-/* ========== FZ Eventz v2 — Premium Interactions ========== */
+/* ========== FZ Eventz v3 — Premium Interactions ========== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ----- Navigation scroll effect ----- */
+  /* ----- Navigation ----- */
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.pageYOffset > 60);
-  });
+  }, { passive: true });
 
   /* ----- Mobile menu ----- */
   const menuToggle = document.querySelector('.menu-toggle');
@@ -32,22 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlayTriggers = document.querySelectorAll('[data-open-overlay]');
   const overlayClose = document.querySelector('.overlay-close');
 
-  function openOverlay() {
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeOverlay() {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+  function openOverlay() { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeOverlay() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
 
   overlayTriggers.forEach(t => t.addEventListener('click', openOverlay));
   overlayClose.addEventListener('click', closeOverlay);
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeOverlay(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeOverlay(); });
 
-  /* ----- Lead form submission ----- */
+  /* ----- Form submission to WhatsApp ----- */
   const leadForm = document.getElementById('leadForm');
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
@@ -82,7 +75,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ----- Intersection Observer for reveal animations ----- */
+  /* ----- Background Effects Generator ----- */
+  function createBgEffects(section) {
+    const container = section.querySelector('.bg-effects');
+    if (!container) return;
+
+    const rect = section.getBoundingClientRect();
+    const h = rect.height || 800;
+
+    // Create floating gold particles
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement('div');
+      p.className = 'gold-particle';
+      const size = 2 + Math.random() * 3;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = (5 + Math.random() * 90) + '%';
+      p.style.bottom = '-10px';
+      const dur = 12 + Math.random() * 18;
+      const delay = Math.random() * 15;
+      const anim = ['floatParticle1', 'floatParticle2', 'floatParticle3'][Math.floor(Math.random() * 3)];
+      p.style.animation = `${anim} ${dur}s ease-in-out ${delay}s infinite`;
+      container.appendChild(p);
+    }
+
+    // Create shimmer lines
+    for (let i = 0; i < 3; i++) {
+      const l = document.createElement('div');
+      l.className = 'shimmer-line';
+      l.style.width = (20 + Math.random() * 40) + '%';
+      l.style.top = (10 + Math.random() * 80) + '%';
+      l.style.left = '0';
+      l.style.height = '1px';
+      const dur = 10 + Math.random() * 15;
+      const delay = Math.random() * 10;
+      const anim = i % 2 === 0 ? 'shimmerLine1' : 'shimmerLine2';
+      l.style.animation = `${anim} ${dur}s ease-in-out ${delay}s infinite`;
+      container.appendChild(l);
+    }
+
+    // Create twinkle stars
+    for (let i = 0; i < 8; i++) {
+      const t = document.createElement('div');
+      t.className = 'twinkle-dot';
+      t.style.width = (2 + Math.random() * 2) + 'px';
+      t.style.height = t.style.width;
+      t.style.left = (5 + Math.random() * 90) + '%';
+      t.style.top = (5 + Math.random() * 90) + '%';
+      t.style.animation = `twinkle ${3 + Math.random() * 4}s ease-in-out ${Math.random() * 5}s infinite`;
+      container.appendChild(t);
+    }
+  }
+
+  // Apply bg effects to all sections
+  document.querySelectorAll('.about, .events, .wedding, .testimonials, .cta-section').forEach(section => {
+    // Add bg-effects container if not already present
+    if (!section.querySelector('.bg-effects')) {
+      const div = document.createElement('div');
+      div.className = 'bg-effects';
+      section.prepend(div);
+    }
+    createBgEffects(section);
+  });
+
+  /* ----- Intersection Observer for reveals ----- */
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -60px 0px'
@@ -93,16 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         const el = entry.target;
 
-        // Stagger children if container has stagger class
         if (el.classList.contains('reveal-stagger')) {
-          const children = el.children;
-          Array.from(children).forEach((child, i) => {
-            const delay = child.dataset.delay || i * 100;
+          Array.from(el.children).forEach((child, i) => {
+            const delay = child.dataset.delay || i * 120;
             setTimeout(() => { child.style.opacity = '1'; child.style.transform = 'translateY(0)'; }, delay);
           });
           el.classList.add('visible');
         } else {
-          // Check for data-delay on individual elements
           const delay = parseInt(el.dataset.delay) || 0;
           setTimeout(() => { el.classList.add('visible'); }, delay);
         }
@@ -114,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Observe all reveal elements
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger, .event-card, .testimonial-card').forEach((el, i) => {
-    // Set staggered delays for event cards and testimonial cards
     if (el.classList.contains('event-card') || el.classList.contains('testimonial-card')) {
       const row = Math.floor(i / 2);
       const col = i % 2;
@@ -123,39 +175,40 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
-  // Also observe section-label and section-title within sections
+  // Observe section label, title, subtitle
   document.querySelectorAll('section').forEach(section => {
-    const label = section.querySelector('.section-label');
-    const title = section.querySelector('.section-title');
-    const sub = section.querySelector('.section-subtitle');
-    [label, title, sub].forEach((el, i) => {
+    const els = [
+      section.querySelector('.section-label'),
+      section.querySelector('.section-title'),
+      section.querySelector('.section-subtitle')
+    ];
+    els.forEach((el, i) => {
       if (el && !el.classList.contains('reveal') && !el.closest('.reveal-stagger')) {
         el.classList.add('reveal');
-        el.dataset.delay = i * 120;
+        el.dataset.delay = i * 130;
         revealObserver.observe(el);
       }
     });
   });
 
-  // Observe about-grid, wedding-frame, cta-content
+  // Observe .about-grid, .wedding-frame, .cta-content
   document.querySelectorAll('.about-grid, .wedding-frame, .cta-content').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
   });
 
-  /* ----- Parallax hero on scroll ----- */
+  /* ----- Hero parallax ----- */
   const hero = document.querySelector('.hero');
-  const heroImage = hero?.querySelector('.hero-image');
+  const heroImg = hero?.querySelector('.hero-img');
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
-    if (heroImage && scrollY < window.innerHeight) {
-      const speed = 0.3;
-      heroImage.style.transform = `scale(1.05) translateY(${scrollY * speed * 0.1}px)`;
+    const sy = window.pageYOffset;
+    if (heroImg && sy < window.innerHeight) {
+      heroImg.style.transform = `scale(1) translateY(${sy * 0.15}px)`;
     }
   }, { passive: true });
 
-  /* ----- Smooth anchor scroll with offset ----- */
+  /* ----- Smooth scroll ----- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -163,8 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
-        const offset = 90;
-        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.pageYOffset - 90,
+          behavior: 'smooth'
+        });
       }
     });
   });

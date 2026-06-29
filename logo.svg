@@ -1,26 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" width="400" height="140">
   <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#C9A84C"/>
-      <stop offset="50%" style="stop-color:#F0D68A"/>
-      <stop offset="100%" style="stop-color:#C9A84C"/>
+    <linearGradient id="logoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="40%" style="stop-color:#FFF2CD"/>
+      <stop offset="60%" style="stop-color:#F0D060"/>
+      <stop offset="100%" style="stop-color:#B8941E"/>
     </linearGradient>
-    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#C9A84C"/>
-      <stop offset="50%" style="stop-color:#F0D68A;stop-opacity:0.6"/>
-      <stop offset="100%" style="stop-color:#C9A84C"/>
+    <linearGradient id="logoGold2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="50%" style="stop-color:#FFF2CD"/>
+      <stop offset="100%" style="stop-color:#D4AF37"/>
     </linearGradient>
   </defs>
-  <!-- F Z monogram emblem -->
-  <g transform="translate(30, 20)">
-    <rect x="0" y="0" width="80" height="80" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
-    <text x="40" y="58" font-family="'Playfair Display', Georgia, serif" font-size="48" font-weight="700" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="2">FZ</text>
+  <!-- Crest / Shield -->
+  <g transform="translate(20, 10)">
+    <path d="M0 35 L35 0 L70 35 L70 85 L35 120 L0 85 Z" fill="none" stroke="url(#logoGold)" stroke-width="2.5"/>
+    <path d="M10 40 L35 15 L60 40 L60 80 L35 105 L10 80 Z" fill="none" stroke="url(#logoGold)" stroke-width="1" opacity="0.3"/>
+    <text x="35" y="72" font-family="'Playfair Display', Georgia, serif" font-size="42" font-weight="700" fill="url(#logoGold)" text-anchor="middle" letter-spacing="1">FZ</text>
+    <!-- Small diamonds on sides -->
+    <polygon points="0,45 -5,50 0,55 5,50" fill="url(#logoGold)"/>
+    <polygon points="70,45 65,50 70,55 75,50" fill="url(#logoGold)"/>
+    <polygon points="0,80 -5,85 0,90 5,85" fill="url(#logoGold)"/>
+    <polygon points="70,80 65,85 70,90 75,85" fill="url(#logoGold)"/>
   </g>
-  <!-- Company Name -->
-  <g transform="translate(130, 20)">
-    <text x="0" y="38" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="4">FZ EVENTZ</text>
-    <text x="0" y="62" font-family="'Inter', Arial, sans-serif" font-size="10" font-weight="300" fill="#C9A84C" letter-spacing="6">ARCHITECTURAL EVENT PRODUCTION</text>
-    <!-- Gold underline accent -->
-    <rect x="0" y="72" width="60" height="2" rx="1" fill="url(#goldGrad2)"/>
+  <!-- Brand name -->
+  <g transform="translate(110, 22)">
+    <text x="0" y="42" font-family="'Playfair Display', Georgia, serif" font-size="32" font-weight="700" fill="#FFFFFF" letter-spacing="5">FZ EVENTZ</text>
+    <text x="0" y="70" font-family="'Inter', Arial, sans-serif" font-size="10" font-weight="300" fill="url(#logoGold2)" letter-spacing="6">ARCHITECTURAL EVENT PRODUCTION</text>
+    <!-- Gold bar -->
+    <rect x="0" y="82" width="70" height="2" rx="1" fill="url(#logoGold2)"/>
+    <!-- Tagline -->
+    <text x="0" y="102" font-family="'Inter', Arial, sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.4)" letter-spacing="3">BENGALURU · INDIA</text>
   </g>
 </svg>
